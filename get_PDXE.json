@@ -1,0 +1,26 @@
+{
+  "pipeline": {
+    "name": "get_PDXE"
+  },
+  "transform": {
+    "image": "bhklab/xeva:v1",
+    "cmd": [
+      "Rscript", 
+      "/pfs/getPDXE/create_PDXE_xevaset.R"]
+    },
+  
+  "resource_requests": {
+    "memory": "2G"
+  },
+  "input": {
+    "cross": [
+      {
+        "git": {
+          "url": "https://github.com/BHKLAB-Pachyderm/getPDXE.git",
+          "name": "",
+          "branch": "main"
+        }
+      }
+    ]
+  }
+}
